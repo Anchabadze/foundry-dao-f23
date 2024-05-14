@@ -14,10 +14,10 @@ import {
 } from "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.sol";
 
 contract MyGovernor is
-    Governor,
+    Governor, // core of a governor system (mapping of proposals, propose(), state() - if a proposal has passed)
     GovernorSettings,
     GovernorCountingSimple,
-    GovernorVotes,
+    GovernorVotes, // ERC20 Voting system (_getVotes() read how much tokens do you have)
     GovernorVotesQuorumFraction,
     GovernorTimelockControl
 {
